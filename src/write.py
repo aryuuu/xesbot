@@ -7,11 +7,11 @@ sauce = open("qna", "a+")
 q = ""
 a = ""
 while(q != "end"):
-	q = raw_input("pertanyaan	: ")
-	a = raw_input("jawaban 	: ")
+	q = input("pertanyaan	: ")
+	a = input("jawaban 	: ")
 
 	if(q != "end"):
-		line = q + '?' + a + "\n"
+		line = q + "." + a + "\n"
 		sauce.write(line)
 
 sauce.close()
