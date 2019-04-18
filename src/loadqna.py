@@ -12,8 +12,8 @@ def load(filename):
 	pertanyaan = []
 	for i in range(len(sauce)-1): #exclude the last line which is just empty
 		pair = sauce[i].split('.') #split q n a
-		kamus[pair[0].strip()] = pair[1]
-		pertanyaan.append(pair[0].strip())
+		kamus[pair[0].strip().lower()] = pair[1].lower()
+		pertanyaan.append(pair[0].strip().lower())
 
 	return kamus, pertanyaan
 
@@ -21,7 +21,7 @@ def load(filename):
 k, p = load("qna")
 q = []
 print("Halo ini xesbot, Apakah ada yang bisa dibantu ?")
-q = input("You : ")
+q = input("You : ").lower()
 
 kalimat = q.split(' ')
 listKataSama = []
@@ -49,9 +49,9 @@ if(len(listPertanyaan) == 0):
 			count += len(kata)
 		
 		count += len(kalimat) - 1 
-		# apakah kata sudah mirip >= 70% jika ya masukkan ke list pertanyaan
+		# apakah kata sudah mirip >= 80% jika ya masukkan ke list pertanyaan
 		persentase = count/len(p[i]) * 100
-		if(persentase >= 70):
+		if(persentase >= 80):
 			listPertanyaan.append(p[i])
 
 # keluarkan jawaban dari bot
