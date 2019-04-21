@@ -23,7 +23,25 @@ algo = raw_input()
 if(algo == "KMP"):
 	
 elif(algo == "BM"):
-	
+	result = -1
+	i = 0
+	while (i < len(lisp) and result < 0):
+		result = BM(lisp[i], pertanyaan)
+		i += 1
+	if (result < 0):
+		result = WordsBM(lisp,pertanyaan)
+		if (len(result)>0):
+			pertanyaan = result[0]
+			i = 0
+			result = -1
+			while (i < len(lisp) and result < 0):
+				result = BM(lisp[i],pertanyaan)
+				i += 1
+			result = kamus[i]
+		else:
+			print("Can you ask other question.")
+	else:
+		result = kamus[i]
 
 elif(algo == "REGEX"):
 	result = []
