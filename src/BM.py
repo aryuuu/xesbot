@@ -1,6 +1,6 @@
 #Algoritma BM
 def BM(text, pattern):
-	last = lastOccurrence(pattern);
+	last = lastOccurrence(pattern)
 	n = len(text)
 	m = len(pattern)
 	i = m-1; # penunjuk indeks pada text
@@ -18,7 +18,7 @@ def BM(text, pattern):
 			#looking-glass technique
 			if (pattern[j] == text[i]):
 				if (j == 0):
-					return i;
+					return i
 				else:
 					i = i -1
 					j = j -1
@@ -40,7 +40,7 @@ def lastOccurrence(pattern):
 		# -1 menandakan huruf tidak ada pada pattern
 		last.append(-1)
 	for i in range(len(pattern)):
-		last[ord(pattern[i])] = i;
+		last[ord(pattern[i])] = i
 	return last
 
 #algoritman BM untuk penyamaan per-kata
@@ -57,7 +57,7 @@ def wordsBM(listQnA,pattern):
 			#urutan kata pada pattern sesuai dengan urutan kata pada text
 			if (idx > prevIdx):
 				count += len (kata)
-				prevIdx = idx;
+				prevIdx = idx
 		#spasi pada text dianggap tidak ada, karena penyocokan per-kata
 		spasiText = len(listQnA[i].split(' ')) -1
 		#perhitungan persentase
