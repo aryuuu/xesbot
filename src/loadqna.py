@@ -12,7 +12,7 @@ def load(filename):
 	pertanyaan = []
 	for i in range(len(sauce)-1): #exclude the last line which is just empty
 		pair = sauce[i].split('.') #split q n a
-		kamus[pair[0].strip('?').lower()] = pair[1].lower()
+		kamus[pair[0].strip().lower()] = pair[1].lower()
 		pertanyaan.append(pair[0].strip().lower())
 
 	return kamus, pertanyaan

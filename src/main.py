@@ -120,7 +120,7 @@ def getregex():
 		i += 1
 
 	if(result):
-		result = kamus[result[0]]
+		result = kamus[''.join(result)]
 	else:
 		result = "Can you ask another question?"
 
