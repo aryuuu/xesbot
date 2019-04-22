@@ -19,7 +19,7 @@ def clearstopper(sentence):
 def formalize(sentence):
 	result = ""
 	for i in sentence.split(' '):
-		if(ksin[i]):
+		if(i in ksin):
 			result += ksin[i]
 		else:
 			result += i
