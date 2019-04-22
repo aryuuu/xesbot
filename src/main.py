@@ -126,7 +126,7 @@ def getregex():
 			i += 1
 
 		if(result):
-			result = kamus[''.join(result) + '?']
+			result = kamus[''.join(result)]
 		else:
 			result = "Can you ask another question ?"
 	else:

@@ -11,7 +11,7 @@ while(q != "end"):
 	a = input("jawaban 	: ")
 
 	if(q != "end"):
-		line = q + "." + a + "\n"
+		line = q + "?" + a + "\n"
 		sauce.write(line)
 
 sauce.close()
