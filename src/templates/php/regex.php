@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title> subscribetoPewdiepie | KMP </title>
-	<!-- <link rel="stylesheet" href="../css/style.css"> -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 	<script src="../chatHandler.js"></script>
 </head>
@@ -17,9 +16,9 @@
 					<li><a href = "index">About</a></li>
 					<li><a>Let's Match Patterns</a>
 						<ul>
-							<li class="current"><a href = "kmp">KMP</a></li>
+							<li><a href = "kmp">KMP</a></li>
 							<li><a href = "bm">BM</a></li>
-							<li><a href = "regex">Regex</a></li>
+							<li class="current"><a href = "regex">Regex</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -33,17 +32,17 @@
 			<img src="{{ url_for('static', filename='img/about.jpg') }}" alt= "chatbot image" width = 300px>	
 			<div class="chatContainer">
 				<div class="chatHeader">
-					<h3 class="headerText">Hello there, I'm XesBot with KMP Algorithm !	</h3>
+					<h3 class="headerText">Hello there, I'm XesBot with Regex Algorithm ! </h3>
 				</div>
 				<div class="chatMessages">
+					<li class='cm'> <b> XesBot : </b>How may I help you ? </li>
+					<li class='cm'> <b> Question :  </b> {{quest}} </li>
 					{% if answer %}
-					{{ answer }}
-					{% else %}
-					Ask me
+						<li class='cm'> <b> XesBot : </b> {{answer}} </li>	
 					{% endif %}
 				</div>
 				<div class="questionForm">
-					<form id="chatForm" action = "/kmp" method = "POST">
+					<form id="chatForm" action = "/regex" method = "POST">
 						<input type="text" name="text" id="text" placeholder="Ask a Question..">
 						<input type="submit" name="submit" value="Ask !">
 					</form>

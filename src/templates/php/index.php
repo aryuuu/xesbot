@@ -1,7 +1,9 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title> subscribetoPewdiepie | About </title>
-	<link rel="stylesheet" href="../css/style.css">
+	<!-- <link rel="stylesheet" href="../css/style.css"> -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 	<header>
@@ -11,12 +13,12 @@
 			</div>
 			<nav>
 				<ul class="options">
-					<li class = "current"><a href = "index.php">About</a></li>
+					<li class = "current"><a href = "index">About</a></li>
 					<li><a>Let's Pattern Match</a>
 						<ul>
-							<li><a href = "KMP.php">KMP</a></li>
-							<li><a href = "BM.html">BM</a></li>
-							<li><a href = "Regex">Regex</a></li>
+							<li><a href = "kmp">KMP</a></li>
+							<li><a href = "bm">BM</a></li>
+							<li><a href = "regex">Regex</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -26,7 +28,8 @@
 	<section>
 		<div class = "container">
 			<div class = "about">
-				<img src="../img/about.jpg" alt= "chatbot image" width = 300px>	
+				<!-- <img src="../img/about.jpg" alt= "chatbot image" width = 300px>	 -->
+				<img src="{{ url_for('static', filename='img/about.jpg') }}" alt= "chatbot image" width = 300px>	
 				<aside id ="sidebar">
 					<h2> What is this ? </h2>
 					<p>

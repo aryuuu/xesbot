@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title> subscribetoPewdiepie | KMP </title>
-	<link rel="stylesheet" href="../css/style.css">
-
+	<!-- <link rel="stylesheet" href="../css/style.css"> -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 	<header>
@@ -13,12 +13,12 @@
 			</div>
 			<nav>
 				<ul class="options">
-					<li><a href = "index.php">About</a></li>
+					<li><a href = "index">About</a></li>
 					<li><a>Let's Match Patterns</a>
 						<ul>
-							<li><a href = "kmp.php">KMP</a></li>
+							<li><a href = "kmp">KMP</a></li>
 							<li class="current"><a href = "bm.php">BM</a></li>
-							<li><a href = "regex.php">Regex</a></li>
+							<li><a href = "regex">Regex</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -35,18 +35,13 @@
 				</div>
 				<div class="chatMessages">
 					<li class='cm'> <b> XesBot : </b>How may I help you ? </li>
-					<!-- Algoritma  disini -->
-					<!-- Misal var answer = hasilAlgoBM -->
-					<?php
-						if (isset($_POST['submit'])){
-							$text = strip_tags(stripslashes($_POST['text']));
-							echo "<li class='cm'> <b> Question : </b>" .$text. "</li>";
-							/*Algoritma BM disini*/
-							/*Misal var answer = hasilAlgoBM*/
-							$answer = "hasilAlgoBM";
-							echo "<li class='cm'> <b> XesBot : </b>" .$answer. "</li>";
-						}
-					?>
+					<li class='cm'> <b> Question :  </b> {{quest}} </li>
+					{% if answer %}
+						<li class='cm'> <b> XesBot : </b> {{answer}} </li>
+					{% endif %}
+						
+					
+					
 				</div>
 				<div class="questionForm">
 					<form id="chatForm" action = "" method = "POST">
