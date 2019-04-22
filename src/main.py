@@ -69,7 +69,7 @@ def getkmp():
 		# keluarkan jawaban dari bot
 		if(len(listPertanyaan) == 0):
 			# print("Can you ask other question ?")
-			result = "Can you ask another question ?"
+			result = "Apakah ada pertanyaan lain ?"
 		else:
 			# if(len(listPertanyaan) == 1):
 				# print(k[listPertanyaan[0]])
@@ -79,7 +79,7 @@ def getkmp():
 			# 	idx = random.randint(0, len(listPertanyaan))
 			# 	print("xesbot : " + kamus[listPertanyaan[idx]])
 	else:
-		result = "Please, insert a question !"
+		result = "Anda belum memasukkan pertanyaan !"
 
 	return render_template('html/kmp.html', answer=result)
 
@@ -105,11 +105,11 @@ def getbm():
 				result = kamus[lisp[i-1]]
 			else:
 				# print("Can you ask other question ?")
-				result = "Can you ask another question ?"
+				result = "Apakah ada pertanyaan lain ?"
 		else:
 			result = kamus[lisp[i-1]]
 	else:
-		result = "Please, insert a question !"
+		result = "Anda belum memasukkan pertanyaan !"
 
 	return render_template('html/bm.html', answer=result)
 
@@ -128,9 +128,9 @@ def getregex():
 		if(result):
 			result = kamus[''.join(result)]
 		else:
-			result = "Can you ask another question ?"
+			result = "Apakah ada pertanyaan lain ?"
 	else:
-		result = "Please, insert a question !"
+		result = "Anda belum memasukkan pertanyaan !"
 
 	return render_template('html/regex.html', answer=result)
 
