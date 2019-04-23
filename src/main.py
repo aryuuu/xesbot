@@ -120,7 +120,7 @@ def getregex():
 		i += 1
 
 	if(result):
-		result = kamus[''.join(result)+'?']
+		result = kamus[lisp[i-1]]
 	else:
 		result = "Can you ask another question?"
 
